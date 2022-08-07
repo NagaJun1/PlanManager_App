@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PlanManager.views"
+             x:Class="PlanManager.MainPage"
+             Title="予定管理"
+             BackgroundColor="Gainsboro">
+
+    <!-- 予定一覧ページ -->
+    <StackLayout Margin="10">
+
+        <!-- 予定一覧のソート -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="並び替え" TextColor="Black" FontSize="17"/>
+
+            <!-- 日付でソート -->
+            <Button x:Name="BtnSortDate" Text="日付" BackgroundColor="DodgerBlue" FontSize="20"
+                    CornerRadius="3" TextColor="White"/>
+
+            <!-- 優先度でソート -->
+            <Button x:Name="BtnSortPriority" Text="優先度" BackgroundColor="DodgerBlue" FontSize="20"
+                    CornerRadius="3" TextColor="White"/>
+
+            <!--設定ボタン-->
+            <ImageButton x:Name="BtnSetting" Aspect="AspectFit" HeightRequest="50" HorizontalOptions="EndAndExpand"
+                         Source="setting_icon.png"/>
+
+        </StackLayout>
+
+        <!--予定追加ボタン-->
+        <Button x:Name="BtnAddPlan" BackgroundColor="DodgerBlue" FontSize="20" CornerRadius="5" TextColor="White"/>
+
+        <!-- 予定一覧 -->
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="FutureAndOldPlanList"/>
+        </ScrollView>
+
+    </StackLayout>
+</ContentPage>

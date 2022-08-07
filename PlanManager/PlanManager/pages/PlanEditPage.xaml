@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanManager.pages.PlanEditPage"
+             Title="予定編集"
+             >
+
+    <!-- 予定編集ページ -->
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <!-- 日付変更ボタン -->
+                <Label x:Name="LblDate" Text="日付有効:"/>
+                <CheckBox x:Name="ChkEnableDate" IsChecked="False"/>
+                <DatePicker x:Name="DatePickerPlan" IsVisible="False"/>
+
+                <!-- 優先度変更ボタン -->
+                <Label x:Name="LblPriority" Text="優先度:"/>
+                <Picker x:Name="PickerPriority" VerticalOptions="CenterAndExpand"/>
+
+                <Button x:Name="BtnDeletePlan" Text="削除" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <!-- メモの書き換え項目 -->
+            <ScrollView>
+                <Editor x:Name="PlanEditor" IsTextPredictionEnabled="True" AutoSize="TextChanges"/>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
